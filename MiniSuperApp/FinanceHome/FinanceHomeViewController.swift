@@ -47,4 +47,12 @@ final class FinanceHomeViewController: UIViewController, FinanceHomePresentable,
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+
+    func addDashboard(_ view: ViewControllable) {
+        let vc = view.uiviewController
+
+        addChild(vc)
+        stackView.addArrangedSubview(vc.view)
+        vc.didMove(toParent: self)
+    }
 }
