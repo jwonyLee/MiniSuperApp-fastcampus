@@ -9,9 +9,8 @@ import ModernRIBs
 import UIKit
 
 protocol AddPaymentMethodPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapClose()
+    func didTapConfirm(with number: String, cvc: String, expiry: String)
 }
 
 final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPresentable, AddPaymentMethodViewControllable {
@@ -82,6 +81,17 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
 
     private func setupViews() {
         title = "카드 추가"
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(
+                systemName: "xmark",
+                withConfiguration: UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold)
+            ),
+            style: .plain,
+            target: self,
+            action: #selector(didTapClose)
+        )
+
         view.backgroundColor = .backgroundColor
 
         view.addSubview(cardNumberTextField)
@@ -113,6 +123,15 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
 
     @objc
     private func didTapAddCard() {
+        if let number = cardNumberTextField.text,
+           let cvc = securityTextField.text,
+           let expiry = expirationTextField.text {
+            listener?.didTapConfirm(with: number, cvc: cvc, expiry: expiry)
+        }
+    }
 
+    @objc
+    private func didTapClose() {
+        listener?.didTapClose()
     }
 }

@@ -3,6 +3,7 @@ import ModernRIBs
 protocol FinanceHomeInteractable: Interactable, SuperPayDashboardListener, CardOnFileDashboardListener, AddPaymentMethodListener {
     var router: FinanceHomeRouting? { get set }
     var listener: FinanceHomeListener? { get set }
+    var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
 }
 
 protocol FinanceHomeViewControllable: ViewControllable {
@@ -67,13 +68,21 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
 
         let router = addPaymentMethodBuildable.build(withListener: interactor)
         let navigation = NavigationControllerable(root: router.viewControllable)
+        navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
         viewControllable.present(navigation, animated: true, completion: nil)
 
         addPaymentMethodRouting = router
         attachChild(router)
     }
 
-    func dettachAddPaymentMethod() {
-        // TODO
+    func detachAddPaymentMethod() {
+        guard let router = addPaymentMethodRouting else {
+            return
+        }
+
+        viewControllable.dismiss(completion: nil)
+
+        detachChild(router)
+        addPaymentMethodRouting = nil
     }
 }

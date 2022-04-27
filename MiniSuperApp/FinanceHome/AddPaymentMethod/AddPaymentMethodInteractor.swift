@@ -6,6 +6,7 @@
 //
 
 import ModernRIBs
+import Combine
 
 protocol AddPaymentMethodRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -17,7 +18,12 @@ protocol AddPaymentMethodPresentable: Presentable {
 }
 
 protocol AddPaymentMethodListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func addPaymentMethodDidTapClose()
+    func addPaymentMethodDidAddCard(paymentMethod: PaymentMethod)
+}
+
+protocol AddPaymentMethodInteractorDependency {
+    var cardsOnFileRepository: CardOnFileRepository { get }
 }
 
 final class AddPaymentMethodInteractor: PresentableInteractor<AddPaymentMethodPresentable>, AddPaymentMethodInteractable, AddPaymentMethodPresentableListener {
@@ -25,9 +31,16 @@ final class AddPaymentMethodInteractor: PresentableInteractor<AddPaymentMethodPr
     weak var router: AddPaymentMethodRouting?
     weak var listener: AddPaymentMethodListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: AddPaymentMethodPresentable) {
+    private let dependency: AddPaymentMethodInteractorDependency
+
+    private var cancellables: Set<AnyCancellable>
+
+    init(
+        presenter: AddPaymentMethodPresentable,
+        dependency: AddPaymentMethodInteractorDependency
+    ) {
+        self.dependency = dependency
+        self.cancellables = []
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -40,5 +53,18 @@ final class AddPaymentMethodInteractor: PresentableInteractor<AddPaymentMethodPr
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+
+    func didTapClose() {
+        listener?.addPaymentMethodDidTapClose()
+    }
+
+    func didTapConfirm(with number: String, cvc: String, expiry: String) {
+        let info = AddPaymentMethodInfo(number: number, cvc: cvc, expiry: expiry)
+        dependency.cardsOnFileRepository.addCard(info: info).sink { _ in
+        } receiveValue: { [weak self] paymentMethod in
+            self?.listener?.addPaymentMethodDidAddCard(paymentMethod: paymentMethod)
+        }
+        .store(in: &cancellables)
     }
 }
