@@ -23,7 +23,7 @@ protocol AddPaymentMethodListener: AnyObject {
 }
 
 protocol AddPaymentMethodInteractorDependency {
-    var cardsOnFileRepository: CardOnFileRepository { get }
+    var cardOnFileRepository: CardOnFileRepository { get }
 }
 
 final class AddPaymentMethodInteractor: PresentableInteractor<AddPaymentMethodPresentable>, AddPaymentMethodInteractable, AddPaymentMethodPresentableListener {
@@ -61,7 +61,7 @@ final class AddPaymentMethodInteractor: PresentableInteractor<AddPaymentMethodPr
 
     func didTapConfirm(with number: String, cvc: String, expiry: String) {
         let info = AddPaymentMethodInfo(number: number, cvc: cvc, expiry: expiry)
-        dependency.cardsOnFileRepository.addCard(info: info).sink { _ in
+        dependency.cardOnFileRepository.addCard(info: info).sink { _ in
         } receiveValue: { [weak self] paymentMethod in
             self?.listener?.addPaymentMethodDidAddCard(paymentMethod: paymentMethod)
         }
