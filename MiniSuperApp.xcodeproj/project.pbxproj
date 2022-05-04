@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8401A8B128224AA700EB5180 /* SuperPayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401A8B028224AA700EB5180 /* SuperPayRepository.swift */; };
 		84F37B3828176E1900FEADC4 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 84F37B3728176E1900FEADC4 /* CombineExt */; };
 		84F37B3A28176E3100FEADC4 /* Combine+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F37B3928176E3100FEADC4 /* Combine+Utils.swift */; };
 		84F37B3C2817721800FEADC4 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F37B3B2817721800FEADC4 /* Formatter.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8401A8B028224AA700EB5180 /* SuperPayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPayRepository.swift; sourceTree = "<group>"; };
 		84F37B3928176E3100FEADC4 /* Combine+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Utils.swift"; sourceTree = "<group>"; };
 		84F37B3B2817721800FEADC4 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		84F37B3E281774BA00FEADC4 /* CardOnFileDashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileDashboardRouter.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				84F37B4E28177B4C00FEADC4 /* CardOnFileRepository.swift */,
+				8401A8B028224AA700EB5180 /* SuperPayRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */,
 				84F37B4F28177B4C00FEADC4 /* CardOnFileRepository.swift in Sources */,
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
+				8401A8B128224AA700EB5180 /* SuperPayRepository.swift in Sources */,
 				F5EAA230270B3A7100EF2B70 /* RIBs+Utils.swift in Sources */,
 				F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */,
 				F5EAA22B270B3A4500EF2B70 /* TransportHomeBuilder.swift in Sources */,
