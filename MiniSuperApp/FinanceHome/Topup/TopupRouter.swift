@@ -7,7 +7,7 @@
 
 import ModernRIBs
 
-protocol TopupInteractable: Interactable, AddPaymentMethodListener, EnterAmountListener {
+protocol TopupInteractable: Interactable, AddPaymentMethodListener, EnterAmountListener, CardOnFileListener {
     var router: TopupRouting? { get set }
     var listener: TopupListener? { get set }
 
@@ -29,15 +29,20 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
     private let enterAmountBuildable: EnterAmountBuildable
     private var enterAmountRouting: Routing?
 
+    private let cardOnFileBuildable: CardOnFileBuildable
+    private var cardOnFileRouting: Routing?
+
     init(
         interactor: TopupInteractable,
         viewController: ViewControllable,
         addPaymentMethodBuildable: AddPaymentMethodBuildable,
-        enterAmountBuildable: EnterAmountBuildable
+        enterAmountBuildable: EnterAmountBuildable,
+        cardOnFileBuildable: CardOnFileBuildable
     ) {
         self.viewController = viewController
         self.addPaymentMethodBuildable = addPaymentMethodBuildable
         self.enterAmountBuildable = enterAmountBuildable
+        self.cardOnFileBuildable = cardOnFileBuildable
         super.init(interactor: interactor)
         interactor.router = self
     }
@@ -103,7 +108,28 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
 
         dismissPresentedNavigation(completion: nil)
         detachChild(router)
-        self.enterAmountRouting = nil
+        enterAmountRouting = nil
+    }
+
+    func attachCardOnFile(paymentMethods: [PaymentMethod]) {
+        if cardOnFileRouting != nil {
+            return
+        }
+
+        let router = cardOnFileBuildable.build(withListener: interactor, paymentMethods: paymentMethods)
+        navigationControllable?.pushViewController(router.viewControllable, animated: true)
+        attachChild(router)
+        cardOnFileRouting = router
+    }
+
+    func detachCardOnFile() {
+        guard let router = cardOnFileRouting else {
+          return
+        }
+
+        navigationControllable?.popViewController(animated: true)
+        detachChild(router)
+        cardOnFileRouting = nil
     }
 
     // MARK: - Private
