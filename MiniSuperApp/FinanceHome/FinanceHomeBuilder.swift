@@ -5,8 +5,8 @@ protocol FinanceHomeDependency: Dependency {
     // created by this RIB.
 }
 
-final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashboardDependency, CardOnFileDashboardDependency {
-    var cardsOnFileRepository: CardOnFileRepository
+final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashboardDependency, CardOnFileDashboardDependency, AddPaymentMethodDependency, TopupDependency {
+    var cardOnFileRepository: CardOnFileRepository
     var superPayRepository: SuperPayRepository
     var topupBaseViewController: ViewControllable
 
@@ -18,7 +18,7 @@ final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDash
         superPayRepository: SuperPayRepository,
         topupBaseViewController: ViewControllable
     ) {
-        self.cardsOnFileRepository = cardOnFileRepository
+        self.cardOnFileRepository = cardOnFileRepository
         self.superPayRepository = superPayRepository
         self.topupBaseViewController = topupBaseViewController
         super.init(dependency: dependency)
@@ -52,12 +52,16 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
 
         let superPayDasyboardBuilder: SuperPayDashboardBuilder = SuperPayDashboardBuilder(dependency: component)
         let cardOnFileDashboardBuilder: CardOnFileDashboardBuilder = CardOnFileDashboardBuilder(dependency: component)
+        let addPaymentMethodBuilder: AddPaymentMethodBuilder = AddPaymentMethodBuilder(dependency: component)
+        let topupBuilder: TopupBuilder = TopupBuilder(dependency: component)
 
         return FinanceHomeRouter(
             interactor: interactor,
             viewController: viewController,
             superPayDasyboardBuildable: superPayDasyboardBuilder,
-            cardOnFileDashboardBuildable: cardOnFileDashboardBuilder
+            cardOnFileDashboardBuildable: cardOnFileDashboardBuilder,
+            addPaymentMethodBuildable: addPaymentMethodBuilder,
+            topupBuildable: topupBuilder
         )
     }
 }

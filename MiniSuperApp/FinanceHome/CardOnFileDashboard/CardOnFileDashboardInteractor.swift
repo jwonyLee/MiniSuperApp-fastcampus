@@ -18,12 +18,13 @@ protocol CardOnFileDashboardPresentable: Presentable {
     func update(with viewModels: [PaymentMethodViewModel])
 }
 
+// 부모 RIB 에게 이벤트가 발생했다는 것을 알리기 위할 때 사용한다.
 protocol CardOnFileDashboardListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func cardOnFileDashboardDidTapAddPaymentMethod()
 }
 
 protocol CardOnFileDashboardInteractorDependency {
-    var cardsOnFileRepository: CardOnFileRepository { get }
+    var cardOnFileRepository: CardOnFileRepository { get }
 }
 
 final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashboardPresentable>, CardOnFileDashboardInteractable, CardOnFileDashboardPresentableListener {
@@ -48,7 +49,7 @@ final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashb
     override func didBecomeActive() {
         super.didBecomeActive()
 
-        dependency.cardsOnFileRepository.cardOnFile.sink { methods in
+        dependency.cardOnFileRepository.cardOnFile.sink { methods in
             let viewModels = methods.prefix(5).map(PaymentMethodViewModel.init)
             self.presenter.update(with: viewModels)
         }
@@ -60,5 +61,9 @@ final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashb
 
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
+    }
+
+    func didTapAddPaymentMethod() {
+        listener?.cardOnFileDashboardDidTapAddPaymentMethod()
     }
 }
