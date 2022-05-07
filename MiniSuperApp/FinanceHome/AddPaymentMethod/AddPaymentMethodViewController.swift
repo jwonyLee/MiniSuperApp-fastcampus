@@ -67,10 +67,11 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
 
     // MARK: - Initializes
 
-    init() {
+    init(closeButtonType: DismissButtonType) {
         super.init(nibName: nil, bundle: nil)
 
         setupViews()
+        setupNavigationItem(with: closeButtonType, target: self, action: #selector(didTapClose))
     }
 
     required init?(coder: NSCoder) {
@@ -81,8 +82,6 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
 
     private func setupViews() {
         title = "카드 추가"
-
-        setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
 
         view.backgroundColor = .backgroundColor
 
