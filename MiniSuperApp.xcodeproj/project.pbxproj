@@ -97,6 +97,11 @@
 		84F37B4B28177AEC00FEADC4 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		84F37B4E28177B4C00FEADC4 /* CardOnFileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileRepository.swift; sourceTree = "<group>"; };
 		84F37B5028177D5000FEADC4 /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
+		871F83F52826A5AB007BF923 /* CX */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CX; sourceTree = "<group>"; };
+		871F83F62826A5BD007BF923 /* Finanace */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Finanace; sourceTree = "<group>"; };
+		871F83F72826A5D2007BF923 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Transport; sourceTree = "<group>"; };
+		871F83F82826A601007BF923 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Profile; sourceTree = "<group>"; };
+		871F83F92826A610007BF923 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
 		872F01702819645200E5174A /* AddPaymentMethodRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodRouter.swift; sourceTree = "<group>"; };
 		872F01712819645200E5174A /* AddPaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodViewController.swift; sourceTree = "<group>"; };
 		872F01722819645200E5174A /* AddPaymentMethodBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodBuilder.swift; sourceTree = "<group>"; };
@@ -338,6 +343,11 @@
 		F5829F4C26DB2BC400BFA8CD = {
 			isa = PBXGroup;
 			children = (
+				871F83F92826A610007BF923 /* Platform */,
+				871F83F82826A601007BF923 /* Profile */,
+				871F83F72826A5D2007BF923 /* Transport */,
+				871F83F62826A5BD007BF923 /* Finanace */,
+				871F83F52826A5AB007BF923 /* CX */,
 				F5829F5726DB2BC400BFA8CD /* MiniSuperApp */,
 				F5829F5626DB2BC400BFA8CD /* Products */,
 			);
