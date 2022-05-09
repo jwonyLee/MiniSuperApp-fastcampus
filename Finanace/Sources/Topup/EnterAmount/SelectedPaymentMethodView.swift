@@ -3,18 +3,17 @@ import UIKit
 import FinanceEntity
 import SuperUI
 
-struct SelectedPaymentMethodViewModel {
-    let image: UIImage?
-    let name: String
+public struct SelectedPaymentMethodViewModel {
+    public let image: UIImage?
+    public let name: String
 
-    init(_ paymentMethod: PaymentMethod) {
+    public init(_ paymentMethod: PaymentMethod) {
         image = UIColor(hex: paymentMethod.color).flatMap { UIImage(color: $0) }
         name = "\(paymentMethod.name) \(paymentMethod.digits)"
     }
 }
 
 final class SelectedPaymentMethodView: UIView {
-
     func update(with viewModel: SelectedPaymentMethodViewModel) {
         self.thumbnailView.image = viewModel.image
         self.nameLabel.text = viewModel.name
