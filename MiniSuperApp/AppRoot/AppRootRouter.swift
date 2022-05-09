@@ -2,6 +2,7 @@ import ModernRIBs
 
 import AppHome
 import FinanceHome
+import ProfileHome
 import RIBsUtil
 
 protocol AppRootInteractable: Interactable,

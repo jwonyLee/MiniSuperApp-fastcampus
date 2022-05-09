@@ -4,6 +4,7 @@ import UIKit
 import AppHome
 import FinanceHome
 import FinanceRepository
+import ProfileHome
 
 protocol AppRootDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be

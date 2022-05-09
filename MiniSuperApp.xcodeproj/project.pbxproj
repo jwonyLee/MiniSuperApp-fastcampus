@@ -16,14 +16,10 @@
 		845376132828D64600BB8C51 /* CombineUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 845376122828D64600BB8C51 /* CombineUtil */; };
 		845376152828D64600BB8C51 /* RIBsUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 845376142828D64600BB8C51 /* RIBsUtil */; };
 		845376172828D64600BB8C51 /* SuperUI in Frameworks */ = {isa = PBXBuildFile; productRef = 845376162828D64600BB8C51 /* SuperUI */; };
-		845376192828D64600BB8C51 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = 845376182828D64600BB8C51 /* Profile */; };
 		8453761B2828D64600BB8C51 /* TransportHome in Frameworks */ = {isa = PBXBuildFile; productRef = 8453761A2828D64600BB8C51 /* TransportHome */; };
+		84564D642828D81000DF7D70 /* ProfileHome in Frameworks */ = {isa = PBXBuildFile; productRef = 84564D632828D81000DF7D70 /* ProfileHome */; };
 		84F37B3828176E1900FEADC4 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 84F37B3728176E1900FEADC4 /* CombineExt */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
-		F57F6AF026DB4A2D00C0117D /* ProfileHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AEC26DB4A2D00C0117D /* ProfileHomeRouter.swift */; };
-		F57F6AF126DB4A2D00C0117D /* ProfileHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AED26DB4A2D00C0117D /* ProfileHomeViewController.swift */; };
-		F57F6AF226DB4A2D00C0117D /* ProfileHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AEE26DB4A2D00C0117D /* ProfileHomeBuilder.swift */; };
-		F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AEF26DB4A2D00C0117D /* ProfileHomeInteractor.swift */; };
 		F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */; };
 		F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5829F5826DB2BC400BFA8CD /* AppDelegate.swift */; };
 		F5829F6226DB2BC500BFA8CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5829F6126DB2BC500BFA8CD /* Assets.xcassets */; };
@@ -42,10 +38,6 @@
 		871F83F82826A601007BF923 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Profile; sourceTree = "<group>"; };
 		871F83F92826A610007BF923 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
-		F57F6AEC26DB4A2D00C0117D /* ProfileHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeRouter.swift; sourceTree = "<group>"; };
-		F57F6AED26DB4A2D00C0117D /* ProfileHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeViewController.swift; sourceTree = "<group>"; };
-		F57F6AEE26DB4A2D00C0117D /* ProfileHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeBuilder.swift; sourceTree = "<group>"; };
-		F57F6AEF26DB4A2D00C0117D /* ProfileHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeInteractor.swift; sourceTree = "<group>"; };
 		F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSuperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5829F5826DB2BC400BFA8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,13 +55,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845376192828D64600BB8C51 /* Profile in Frameworks */,
 				8453760D2828D64600BB8C51 /* FinanceHome in Frameworks */,
 				845376172828D64600BB8C51 /* SuperUI in Frameworks */,
 				8453760F2828D64600BB8C51 /* FinanceRepository in Frameworks */,
 				845376132828D64600BB8C51 /* CombineUtil in Frameworks */,
 				845376092828D64600BB8C51 /* AddPaymentMethod in Frameworks */,
 				8453761B2828D64600BB8C51 /* TransportHome in Frameworks */,
+				84564D642828D81000DF7D70 /* ProfileHome in Frameworks */,
 				845376072828D64600BB8C51 /* AppHome in Frameworks */,
 				84F37B3828176E1900FEADC4 /* CombineExt in Frameworks */,
 				845376112828D64600BB8C51 /* Topup in Frameworks */,
@@ -87,17 +79,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F57F6ADB26DB49FD00C0117D /* ProfileHome */ = {
-			isa = PBXGroup;
-			children = (
-				F57F6AEC26DB4A2D00C0117D /* ProfileHomeRouter.swift */,
-				F57F6AED26DB4A2D00C0117D /* ProfileHomeViewController.swift */,
-				F57F6AEE26DB4A2D00C0117D /* ProfileHomeBuilder.swift */,
-				F57F6AEF26DB4A2D00C0117D /* ProfileHomeInteractor.swift */,
-			);
-			path = ProfileHome;
 			sourceTree = "<group>";
 		};
 		F57F6AFF26DB585100C0117D /* Utils */ = {
@@ -135,7 +116,6 @@
 			children = (
 				F5829F7A26DB3AF900BFA8CD /* AppDelegate */,
 				F5829F6F26DB33CF00BFA8CD /* AppRoot */,
-				F57F6ADB26DB49FD00C0117D /* ProfileHome */,
 				F57F6AFF26DB585100C0117D /* Utils */,
 				F5829F6126DB2BC500BFA8CD /* Assets.xcassets */,
 				F5829F6326DB2BC500BFA8CD /* LaunchScreen.storyboard */,
@@ -192,8 +172,8 @@
 				845376122828D64600BB8C51 /* CombineUtil */,
 				845376142828D64600BB8C51 /* RIBsUtil */,
 				845376162828D64600BB8C51 /* SuperUI */,
-				845376182828D64600BB8C51 /* Profile */,
 				8453761A2828D64600BB8C51 /* TransportHome */,
+				84564D632828D81000DF7D70 /* ProfileHome */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -252,15 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F57F6AF226DB4A2D00C0117D /* ProfileHomeBuilder.swift in Sources */,
-				F57F6AF126DB4A2D00C0117D /* ProfileHomeViewController.swift in Sources */,
-				F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */,
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
 				F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */,
 				F5829F7926DB397300BFA8CD /* AppComponent.swift in Sources */,
-				F57F6AF026DB4A2D00C0117D /* ProfileHomeRouter.swift in Sources */,
 				F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */,
 				F5829F7426DB34AA00BFA8CD /* AppRootRouter.swift in Sources */,
 			);
@@ -513,13 +489,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SuperUI;
 		};
-		845376182828D64600BB8C51 /* Profile */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Profile;
-		};
 		8453761A2828D64600BB8C51 /* TransportHome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TransportHome;
+		};
+		84564D632828D81000DF7D70 /* ProfileHome */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProfileHome;
 		};
 		84F37B3728176E1900FEADC4 /* CombineExt */ = {
 			isa = XCSwiftPackageProductDependency;
