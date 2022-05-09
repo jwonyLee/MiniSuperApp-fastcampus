@@ -5,7 +5,7 @@ import CombineUtil
 import FinanceRepository
 import Topup
 
-protocol FinanceHomeDependency: Dependency {
+public protocol FinanceHomeDependency: Dependency {
     var cardOnFileRepository: CardOnFileRepository { get }
     var superPayRepository: SuperPayRepository { get }
 }
@@ -28,17 +28,16 @@ final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDash
 
 // MARK: - Builder
 
-protocol FinanceHomeBuildable: Buildable {
-    func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting
+public protocol FinanceHomeBuildable: Buildable {
+    func build(withListener listener: FinanceHomeListener) -> ViewableRouting
 }
 
-final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuildable {
-
-    override init(dependency: FinanceHomeDependency) {
+public final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuildable {
+    public override init(dependency: FinanceHomeDependency) {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting {
+    public func build(withListener listener: FinanceHomeListener) -> ViewableRouting {
         let viewController = FinanceHomeViewController()
 
         let component = FinanceHomeComponent(

@@ -18,6 +18,10 @@ let package = Package(
             targets: ["Topup"]
         ),
         .library(
+            name: "FinanceHome",
+            targets: ["FinanceHome"]
+        ),
+        .library(
             name: "FinanceEntity",
             targets: ["FinanceEntity"]
         ),
@@ -43,6 +47,17 @@ let package = Package(
         ),
         .target(
             name: "Topup",
+            dependencies: [
+                "ModernRIBs",
+                "FinanceEntity",
+                "FinanceRepository",
+                "AddPaymentMethod",
+                .product(name: "RIBsUtil", package: "Platform"),
+                .product(name: "SuperUI", package: "Platform"),
+            ]
+        ),
+        .target(
+            name: "FinanceHome",
             dependencies: [
                 "ModernRIBs",
                 "FinanceEntity",
