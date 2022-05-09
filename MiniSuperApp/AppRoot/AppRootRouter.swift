@@ -1,5 +1,6 @@
 import ModernRIBs
 
+import AppHome
 import FinanceHome
 import RIBsUtil
 
