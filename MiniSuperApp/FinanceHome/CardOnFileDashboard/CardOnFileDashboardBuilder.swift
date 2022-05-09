@@ -7,6 +7,8 @@
 
 import ModernRIBs
 
+import FinanceRepository
+
 protocol CardOnFileDashboardDependency: Dependency {
     var cardOnFileRepository: CardOnFileRepository { get }
 }

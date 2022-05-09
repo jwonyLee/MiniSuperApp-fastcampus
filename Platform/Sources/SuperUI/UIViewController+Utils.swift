@@ -7,21 +7,10 @@
 
 import UIKit
 
-enum DismissButtonType {
-    case back, close
-
-    var iconSystemName: String {
-        switch self {
-        case .back:
-            return "chevron.backward"
-        case .close:
-            return "xmark"
-        }
-    }
-}
+import RIBsUtil
 
 extension UIViewController {
-    func setupNavigationItem(with buttonType: DismissButtonType, target: Any?, action: Selector?) {
+    public func setupNavigationItem(with buttonType: DismissButtonType, target: Any?, action: Selector?) {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(
                 systemName: buttonType.iconSystemName,

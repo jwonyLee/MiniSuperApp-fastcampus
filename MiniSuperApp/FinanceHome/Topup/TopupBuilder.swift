@@ -7,6 +7,11 @@
 
 import ModernRIBs
 
+import AddPaymentMethod
+import CombineUtil
+import FinanceEntity
+import FinanceRepository
+
 protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
     var cardOnFileRepository: CardOnFileRepository { get }

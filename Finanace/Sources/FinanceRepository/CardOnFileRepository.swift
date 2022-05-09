@@ -8,13 +8,19 @@
 import Combine
 import Foundation
 
-protocol CardOnFileRepository {
+import FinanceEntity
+import CombineUtil
+
+public protocol CardOnFileRepository {
     var cardOnFile: ReadOnlyCurrentValuePublisher<[PaymentMethod]> { get }
     func addCard(info: AddPaymentMethodInfo) -> AnyPublisher<PaymentMethod, Error>
 }
 
-final class CardOnFileRepositoryImp: CardOnFileRepository {
-    var cardOnFile: ReadOnlyCurrentValuePublisher<[PaymentMethod]> { paymentMethodsSubject }
+public final class CardOnFileRepositoryImp: CardOnFileRepository {
+    public var cardOnFile: ReadOnlyCurrentValuePublisher<[PaymentMethod]> { paymentMethodsSubject }
+
+    public init() {
+    }
 
     private let paymentMethodsSubject = CurrentValuePublisher<[PaymentMethod]>([
         PaymentMethod(id: "0", name: "우리은행", digits: "0123", color: "#f19a38ff", isPrimary: false),
@@ -24,7 +30,7 @@ final class CardOnFileRepositoryImp: CardOnFileRepository {
         PaymentMethod(id: "4", name: "카카오뱅크", digits: "8741", color: "#ffcc00ff", isPrimary: false)
     ])
 
-    func addCard(info: AddPaymentMethodInfo) -> AnyPublisher<PaymentMethod, Error> {
+    public func addCard(info: AddPaymentMethodInfo) -> AnyPublisher<PaymentMethod, Error> {
         let paymentMethod = PaymentMethod(
             id: "00",
             name: "New 카드",

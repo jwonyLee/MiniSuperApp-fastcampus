@@ -8,6 +8,8 @@
 import Combine
 import Foundation
 
+import CombineUtil
+
 protocol SuperPayRepository {
     var balance: ReadOnlyCurrentValuePublisher<Double> { get }
     func topup(amount: Double, paymentMethodID: String) -> AnyPublisher<Void, Error>

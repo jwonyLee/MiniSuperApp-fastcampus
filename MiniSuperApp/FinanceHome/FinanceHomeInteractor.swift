@@ -1,5 +1,8 @@
 import ModernRIBs
 
+import FinanceEntity
+import SuperUI
+
 protocol FinanceHomeRouting: ViewableRouting {
     func attachSuperPayDashboard()
     func attachCardOnFileDashboard()

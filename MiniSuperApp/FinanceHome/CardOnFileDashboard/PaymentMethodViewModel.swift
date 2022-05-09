@@ -7,6 +7,8 @@
 
 import UIKit
 
+import FinanceEntity
+
 struct PaymentMethodViewModel {
     let name: String
     let digits: String

@@ -8,6 +8,8 @@
 import ModernRIBs
 import Combine
 
+import FinanceRepository
+
 protocol CardOnFileDashboardRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
