@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Finanace",
+    name: "Finance",
     platforms: [
         .iOS(.v14)
     ],
@@ -63,6 +63,7 @@ let package = Package(
                 "FinanceEntity",
                 "FinanceRepository",
                 "AddPaymentMethod",
+                "Topup",
                 .product(name: "RIBsUtil", package: "Platform"),
                 .product(name: "SuperUI", package: "Platform"),
             ]

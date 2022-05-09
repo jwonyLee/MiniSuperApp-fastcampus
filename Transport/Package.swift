@@ -14,12 +14,17 @@ let package = Package(
             targets: ["TransportHome"]),
     ],
     dependencies: [
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/DevYeom/ModernRIBs.git", from: "1.0.0"),
+        .package(path: "../Finance")
     ],
     targets: [
         .target(
             name: "TransportHome",
-            dependencies: [],
+            dependencies: [
+                "ModernRIBs",
+                .product(name: "FinanceRepository", package: "Finance"),
+                .product(name: "Topup", package: "Finance"),
+            ],
             resources: [
                 .process("Resources")
             ]
