@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840995302828E1F300E6D243 /* TopupImp in Frameworks */ = {isa = PBXBuildFile; productRef = 8409952F2828E1F300E6D243 /* TopupImp */; };
 		845376072828D64600BB8C51 /* AppHome in Frameworks */ = {isa = PBXBuildFile; productRef = 845376062828D64600BB8C51 /* AppHome */; };
 		845376092828D64600BB8C51 /* AddPaymentMethod in Frameworks */ = {isa = PBXBuildFile; productRef = 845376082828D64600BB8C51 /* AddPaymentMethod */; };
 		8453760B2828D64600BB8C51 /* FinanceEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 8453760A2828D64600BB8C51 /* FinanceEntity */; };
@@ -18,6 +19,9 @@
 		845376172828D64600BB8C51 /* SuperUI in Frameworks */ = {isa = PBXBuildFile; productRef = 845376162828D64600BB8C51 /* SuperUI */; };
 		8453761B2828D64600BB8C51 /* TransportHome in Frameworks */ = {isa = PBXBuildFile; productRef = 8453761A2828D64600BB8C51 /* TransportHome */; };
 		84564D642828D81000DF7D70 /* ProfileHome in Frameworks */ = {isa = PBXBuildFile; productRef = 84564D632828D81000DF7D70 /* ProfileHome */; };
+		84564D662828DCDB00DF7D70 /* TransportHomeImp in Frameworks */ = {isa = PBXBuildFile; productRef = 84564D652828DCDB00DF7D70 /* TransportHomeImp */; };
+		84564D682828DE5000DF7D70 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84564D672828DE5000DF7D70 /* AppRootComponent.swift */; };
+		846574162828E7BF00EA981B /* AddPaymentMethodImp in Frameworks */ = {isa = PBXBuildFile; productRef = 846574152828E7BF00EA981B /* AddPaymentMethodImp */; };
 		84F37B3828176E1900FEADC4 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 84F37B3728176E1900FEADC4 /* CombineExt */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */; };
@@ -32,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84564D672828DE5000DF7D70 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
 		84865C342828D5C900DF32AD /* Finance */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Finance; sourceTree = "<group>"; };
 		871F83F52826A5AB007BF923 /* CX */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CX; sourceTree = "<group>"; };
 		871F83F72826A5D2007BF923 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Transport; sourceTree = "<group>"; };
@@ -56,9 +61,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8453760D2828D64600BB8C51 /* FinanceHome in Frameworks */,
+				846574162828E7BF00EA981B /* AddPaymentMethodImp in Frameworks */,
 				845376172828D64600BB8C51 /* SuperUI in Frameworks */,
 				8453760F2828D64600BB8C51 /* FinanceRepository in Frameworks */,
 				845376132828D64600BB8C51 /* CombineUtil in Frameworks */,
+				84564D662828DCDB00DF7D70 /* TransportHomeImp in Frameworks */,
+				840995302828E1F300E6D243 /* TopupImp in Frameworks */,
 				845376092828D64600BB8C51 /* AddPaymentMethod in Frameworks */,
 				8453761B2828D64600BB8C51 /* TransportHome in Frameworks */,
 				84564D642828D81000DF7D70 /* ProfileHome in Frameworks */,
@@ -131,6 +139,7 @@
 				F5829F7226DB34AA00BFA8CD /* AppRootBuilder.swift */,
 				F5829F7326DB34AA00BFA8CD /* AppRootInteractor.swift */,
 				F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */,
+				84564D672828DE5000DF7D70 /* AppRootComponent.swift */,
 			);
 			path = AppRoot;
 			sourceTree = "<group>";
@@ -174,6 +183,9 @@
 				845376162828D64600BB8C51 /* SuperUI */,
 				8453761A2828D64600BB8C51 /* TransportHome */,
 				84564D632828D81000DF7D70 /* ProfileHome */,
+				84564D652828DCDB00DF7D70 /* TransportHomeImp */,
+				8409952F2828E1F300E6D243 /* TopupImp */,
+				846574152828E7BF00EA981B /* AddPaymentMethodImp */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -233,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
+				84564D682828DE5000DF7D70 /* AppRootComponent.swift in Sources */,
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
 				F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */,
@@ -453,6 +466,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8409952F2828E1F300E6D243 /* TopupImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TopupImp;
+		};
 		845376062828D64600BB8C51 /* AppHome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppHome;
@@ -496,6 +513,14 @@
 		84564D632828D81000DF7D70 /* ProfileHome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProfileHome;
+		};
+		84564D652828DCDB00DF7D70 /* TransportHomeImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TransportHomeImp;
+		};
+		846574152828E7BF00EA981B /* AddPaymentMethodImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AddPaymentMethodImp;
 		};
 		84F37B3728176E1900FEADC4 /* CombineExt */ = {
 			isa = XCSwiftPackageProductDependency;

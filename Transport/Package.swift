@@ -11,23 +11,37 @@ let package = Package(
     products: [
         .library(
             name: "TransportHome",
-            targets: ["TransportHome"]),
+            targets: ["TransportHome"]
+        ),
+        .library(
+            name: "TransportHomeImp",
+            targets: ["TransportHomeImp"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/DevYeom/ModernRIBs.git", from: "1.0.0"),
-        .package(path: "../Finance")
+        .package(path: "../Finance"),
+        .package(path: "../Platform"),
     ],
     targets: [
         .target(
             name: "TransportHome",
             dependencies: [
+                "ModernRIBs"
+            ]
+        ),
+        .target(
+            name: "TransportHomeImp",
+            dependencies: [
                 "ModernRIBs",
+                "TransportHome",
                 .product(name: "FinanceRepository", package: "Finance"),
                 .product(name: "Topup", package: "Finance"),
+                .product(name: "SuperUI", package: "Platform")
             ],
             resources: [
                 .process("Resources")
             ]
-        ),
+        )
     ]
 )
