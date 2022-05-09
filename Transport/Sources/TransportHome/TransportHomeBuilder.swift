@@ -4,7 +4,7 @@ import CombineUtil
 import FinanceRepository
 import Topup
 
-protocol TransportHomeDependency: Dependency {
+public protocol TransportHomeDependency: Dependency {
     var cardOnFileRepository: CardOnFileRepository { get }
     var superPayRepository: SuperPayRepository { get }
 }
@@ -26,17 +26,16 @@ final class TransportHomeComponent: Component<TransportHomeDependency>, Transpor
 
 // MARK: - Builder
 
-protocol TransportHomeBuildable: Buildable {
-    func build(withListener listener: TransportHomeListener) -> TransportHomeRouting
+public protocol TransportHomeBuildable: Buildable {
+    func build(withListener listener: TransportHomeListener) -> ViewableRouting
 }
 
-final class TransportHomeBuilder: Builder<TransportHomeDependency>, TransportHomeBuildable {
-
-    override init(dependency: TransportHomeDependency) {
+public final class TransportHomeBuilder: Builder<TransportHomeDependency>, TransportHomeBuildable {
+    public override init(dependency: TransportHomeDependency) {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: TransportHomeListener) -> TransportHomeRouting {
+    public func build(withListener listener: TransportHomeListener) -> ViewableRouting {
         let viewController = TransportHomeViewController()
 
         let component = TransportHomeComponent(dependency: dependency, topupBaseViewController: viewController)
