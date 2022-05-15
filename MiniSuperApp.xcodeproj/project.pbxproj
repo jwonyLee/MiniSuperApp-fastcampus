@@ -26,6 +26,9 @@
 		8477D325282E331E00896532 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 8477D324282E331E00896532 /* Network */; };
 		8477D327282E331E00896532 /* NetworkImp in Frameworks */ = {isa = PBXBuildFile; productRef = 8477D326282E331E00896532 /* NetworkImp */; };
 		84F37B3828176E1900FEADC4 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 84F37B3728176E1900FEADC4 /* CombineExt */; };
+		8733E70C283117FF00E80D47 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733E70B283117FF00E80D47 /* BaseURL.swift */; };
+		8733E70E283119DA00E80D47 /* SuperAppURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733E70D283119DA00E80D47 /* SuperAppURLProtocol.swift */; };
+		8733E71028311C1400E80D47 /* SetupURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733E70F28311C1400E80D47 /* SetupURLProtocol.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */; };
 		F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5829F5826DB2BC400BFA8CD /* AppDelegate.swift */; };
@@ -45,6 +48,9 @@
 		871F83F72826A5D2007BF923 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Transport; sourceTree = "<group>"; };
 		871F83F82826A601007BF923 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Profile; sourceTree = "<group>"; };
 		871F83F92826A610007BF923 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
+		8733E70B283117FF00E80D47 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		8733E70D283119DA00E80D47 /* SuperAppURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperAppURLProtocol.swift; sourceTree = "<group>"; };
+		8733E70F28311C1400E80D47 /* SetupURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupURLProtocol.swift; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSuperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +152,9 @@
 				F5829F7326DB34AA00BFA8CD /* AppRootInteractor.swift */,
 				F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */,
 				84564D672828DE5000DF7D70 /* AppRootComponent.swift */,
+				8733E70B283117FF00E80D47 /* BaseURL.swift */,
+				8733E70D283119DA00E80D47 /* SuperAppURLProtocol.swift */,
+				8733E70F28311C1400E80D47 /* SetupURLProtocol.swift */,
 			);
 			path = AppRoot;
 			sourceTree = "<group>";
@@ -254,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
+				8733E71028311C1400E80D47 /* SetupURLProtocol.swift in Sources */,
+				8733E70E283119DA00E80D47 /* SuperAppURLProtocol.swift in Sources */,
 				84564D682828DE5000DF7D70 /* AppRootComponent.swift in Sources */,
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
@@ -261,6 +272,7 @@
 				F5829F7926DB397300BFA8CD /* AppComponent.swift in Sources */,
 				F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */,
 				F5829F7426DB34AA00BFA8CD /* AppRootRouter.swift in Sources */,
+				8733E70C283117FF00E80D47 /* BaseURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

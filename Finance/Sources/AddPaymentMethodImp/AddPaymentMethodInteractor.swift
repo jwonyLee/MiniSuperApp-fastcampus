@@ -5,6 +5,7 @@
 //  Created by 이지원 on 2022/04/27.
 //
 
+import Foundation
 import ModernRIBs
 import Combine
 
@@ -60,10 +61,12 @@ final class AddPaymentMethodInteractor: PresentableInteractor<AddPaymentMethodPr
 
     func didTapConfirm(with number: String, cvc: String, expiry: String) {
         let info = AddPaymentMethodInfo(number: number, cvc: cvc, expiry: expiry)
-        dependency.cardOnFileRepository.addCard(info: info).sink { _ in
-        } receiveValue: { [weak self] paymentMethod in
-            self?.listener?.addPaymentMethodDidAddCard(paymentMethod: paymentMethod)
-        }
-        .store(in: &cancellables)
+        dependency.cardOnFileRepository.addCard(info: info)
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+            } receiveValue: { [weak self] paymentMethod in
+                self?.listener?.addPaymentMethodDidAddCard(paymentMethod: paymentMethod)
+            }
+            .store(in: &cancellables)
     }
 }
